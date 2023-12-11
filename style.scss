@@ -120,6 +120,80 @@ a {
 
 }
 
+.add-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 200px;
+    pointer-events: none;
+
+    &__link {
+        display: none;
+        padding: 8px;
+        color: #FFF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 17px;
+        align-items: center;
+        border: 1px solid #FFFFFF;
+        pointer-events: all;
+        display: block;
+    }
+
+    &__link:hover {
+        box-shadow: 0px 0px 10px 0px #FFFFFF;
+    }
+
+    &__img {
+        margin-right: 10px;
+    }
+
+    &__img:hover {
+        filter: brightness(30%);
+    }
+
+
+}
+
+.add {
+    display: none;
+    padding: 8px;
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    align-items: center;
+    border: 1px solid #FFFFFF;
+    pointer-events: all;
+}
+
+.add-img {
+    margin-right: 10px;
+}
+
+.add:hover {
+    box-shadow: 0px 0px 10px 0px #FFFFFF;
+}
+
+.product:hover .add {
+    display: flex;
+}
+
+
+
+.product-link {
+    display: block;
+}
+
+.product-content:hover,
+.product-img:hover {
+    filter: brightness(30%);
+
+}
+
 .cards {
     &__list {
         display: flex;
@@ -355,7 +429,25 @@ summary {
     }
 }
 
+.burger-menu-icon {
+    &__list {
+        list-style: none;
+    }
 
+    &__link:hover {
+        color: $colorSelect;
+    }
+
+    &__subtitle {
+        color: $colorSelect;
+    }
+
+    &__item,
+    &__subtitle,
+    &__title {
+        padding-bottom: 11px;
+    }
+}
 
 .header {
     background-color: $blackBlock;
@@ -397,18 +489,36 @@ summary {
     }
 }
 
-.breadcrumbs__link {
-    color: #636363;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 17px;
+.breadcrumbs {
+    &__ul {
+        list-style-type: none;
+        display: flex;
+    }
 
-    &__link_site {
-        color: $colorSelect;
+    &__li:not(:last-child)::after {
+        content: "/";
+        color: #636363;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 17px;
+        padding: 0 8px;
+    }
+
+    &__li:last-child .breadcrumbs__link {
         font-weight: 700;
+        color: $colorSelect;
+    }
+
+    &__link {
+        color: #636363;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 17px;
 
     }
+
 }
 
 .product-box {
@@ -425,6 +535,7 @@ summary {
     width: 360px;
     display: flex;
     flex-direction: column;
+    position: relative;
 
     &__img {
         width: 100%;
@@ -460,7 +571,16 @@ summary {
         font-style: normal;
         font-weight: 300;
         line-height: 17px;
+        background-color: #F8F8F8;
+        padding: 24px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
+}
+
+.product:hover .add-box__link {
+    display: flex;
 }
 
 .delivery {
